@@ -1,7 +1,9 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>About us</title>
+<title>About me</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Travello template project">
@@ -19,24 +21,33 @@
 <div class="super_container">
 	
 	<!-- Header -->
-
 	<header class="header">
 		<div class="container">
 			<div class="row">
 				<div class="col">
 					<div class="header_content d-flex flex-row align-items-center justify-content-start">
 						<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
-							<div class="logo"><a href="index.html">Travello</a></div>
+							<a href="{% url 'index' %}"><img src="{% static 'images/why_1.svg' %}" style="width:50px;height:50px; margin-right:10px "></a>
+							<div class="logo"><a href="{% url 'index' %}">Berkan Şems</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li><a href="index.html">Home</a></li>
-									<li class="active"><a href="about.html">About us</a></li>
-									<li><a href="#">Services</a></li>
-									<li><a href="news.html">News</a></li>
-									<li><a href="contact.html">Contact</a></li>
+									<li><a href="{% url 'index' %}">Home</a></li>
+									<li class="active"><a href="{% url 'about' %}">About me</a></li>
+
+									<li><a href="#">Contact</a></li>
+									<li><a href="{% url 'signin' %}">Sign in  </a><svg class="bi bi-person-plus" width="1.2em" height="1.2em" viewBox="0 0 15 15" fill="white" xmlns="http://www.w3.org/2000/svg">
+														  <path fill-rule="evenodd" d="M11 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM1.022 13h9.956a.274.274 0 00.014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 00.022.004zm9.974.056v-.002.002zM6 7a2 2 0 100-4 2 2 0 000 4zm3-2a3 3 0 11-6 0 3 3 0 016 0zm4.5 0a.5.5 0 01.5.5v2a.5.5 0 01-.5.5h-2a.5.5 0 010-1H13V5.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+																						  <path fill-rule="evenodd" d="M13 7.5a.5.5 0 01.5-.5h2a.5.5 0 010 1H14v1.5a.5.5 0 01-1 0v-2z" clip-rule="evenodd"/></svg></li>
+
 								</ul>
 							</nav>
-							<div class="header_phone ml-auto">Call us: 5</div>
+							<div class="header_phone ml-auto"><i class="fa fa-phone" aria-hidden="true"></i> 538 060 50 40</div>
+							<ul class="d-flex flex-row align-items-start justify-content-start">
+								<li><a style="color:white" href="https://www.facebook.com/behrang.shams"><i class="fa fa-facebook" aria-hidden="true">.</i></a></li>
+								<li><a style="color:white" href="https://twitter.com/BerkanSems"><i class="fa fa-twitter" aria-hidden="true"></i>.</a></li>
+								<li><a style="color:white" href="https://tr.linkedin.com/in/berkan-%C5%9Fems-44ba2681"><i class="fa fa-linkedin" aria-hidden="true"> . </i></a></li>
+								<li><a style="color:white" href="https://github.com/berkansems"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+							</ul>
 
 							<!-- Hamburger -->
 
@@ -49,77 +60,20 @@
 				</div>
 			</div>
 		</div>
-		<div class="header_social d-flex flex-row align-items-center justify-content-start">
-			<ul class="d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
+
 	</header>
 
 	<!-- Menu -->
 
-	<div class="menu">
-		<div class="menu_header d-flex flex-row align-items-center justify-content-start">
-			<div class="menu_logo"><a href="index.html">Travello</a></div>
-			<div class="menu_close_container ml-auto"><div class="menu_close"><div></div><div></div></div></div>
-		</div>
-		<div class="menu_content">
-			<ul>
-				<li><a href="inex.html">Home</a></li>
-				<li><a href="about.html">About us</a></li>
-				<li><a href="#">Services</a></li>
-				<li><a href="news.html">News</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-		</div>
-		<div class="menu_social">
-			<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
-			<ul class="d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
-	</div>
 	
 	<!-- Home -->
 
 	<div class="home">
-		<div class="background_image" style="background-image:url(images/about.jpg)"></div>
+		<div class="background_image" style="background-image:url({% static 'images/dev.jpg' %})"></div>
 	</div>
 
 	<!-- Search -->
 
-	<div class="home_search">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="home_search_container">
-						<div class="home_search_title">Search for your trip</div>
-						<div class="home_search_content">
-							<form action="#" class="home_search_form" id="home_search_form">
-								<div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1" placeholder="City" required="required">
-									<input type="text" class="search_input search_input_2" placeholder="Departure" required="required">
-									<input type="text" class="search_input search_input_3" placeholder="Arrival" required="required">
-									<input type="text" class="search_input search_input_4" placeholder="Budget" required="required">
-									<button class="home_search_button">search</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<!-- About -->
 
@@ -127,22 +81,22 @@
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<div class="section_subtitle">simply amazing places</div>
-					<div class="section_title"><h2>A few words about us</h2></div>
+					<div class="section_subtitle">Overview of my experience</div>
+					<div class="section_title"><h2>A few words about me</h2></div>
 				</div>
 			</div>
 			<div class="row about_row">
 				<div class="col-lg-6">
 					<div class="about_content">
-						<div class="text_highlight">Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet .Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+						<div class="text_highlight">I’m Berkan SEMS MSc Mechanical engineer. I am looking for a job as position of Python Developer. I have more than one year experience (in the time I write this :) ) as a freelance developer and I believe I am ready to move up to work in a corporate company...</div>
 						<div class="about_text">
-							<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.Tempor massa et laoreet .Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu laoreet ante, sollicitudin volutpat quam. Vestibulum posuere malesuada ultrices. In pulvinar rhoncus lacus at aliquet. Nunc vitae lacus varius, auctor nisi sit amet, consectetur mauris. Curabitur sodales semper est, vel faucibus urna laoreet vel. Ut justo diam, sodales non pulvinar at, vulputate quis neque. Etiam aliquam purus vel ultricies consequat.</p>
+							<p>I was working for more than 4 years in irrelevant branch as mechanical engineer but I really tired of doing a job which has nothing to learn more. So I decide to change my way and do the job that I really love it "Programming". Believe or not, I was project manager with a nice salary but nothing is better than doing what you love. </p>
 						</div>
-						<div class="button about_button"><a href="#">read more</a></div>
+						<div class="button about_button"><a href="https://tr.linkedin.com/in/berkan-%C5%9Fems-44ba2681">read more</a></div>
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="about_image"><img src="{% static 'images/about_1.jpg'%}" alt=""></div>
+					<div class="about_image"><img src="{% static 'images/berkan.jpg'%}" alt=""></div>
 				</div>
 			</div>
 		</div>
@@ -157,36 +111,36 @@
 				<!-- Milestone -->
 				<div class="col-lg-3 milestone_col">
 					<div class="milestone text-center">
-						<div class="milestone_icon"><img src="images/mountain.svg" alt=""></div>
-						<div class="milestone_counter" data-end-value="17">0</div>
-						<div class="milestone_text">Online Courses</div>
+						<div class="milestone_icon"><img src="{% static 'images/pythoni.png' %}" alt=""></div>
+						<div class="milestone_counter" data-end-value="16">0</div>
+						<div class="milestone_text">Python/Month Experience</div>
 					</div>
 				</div>
 
 				<!-- Milestone -->
 				<div class="col-lg-3 milestone_col">
 					<div class="milestone text-center">
-						<div class="milestone_icon"><img src="images/island.svg" alt=""></div>
-						<div class="milestone_counter" data-end-value="213">0</div>
-						<div class="milestone_text">Students</div>
+						<div class="milestone_icon"><img src="{% static 'images/django.png'%}" alt=""></div>
+						<div class="milestone_counter" data-end-value="12">0</div>
+						<div class="milestone_text">Django/Month Experience</div>
 					</div>
 				</div>
 
 				<!-- Milestone -->
 				<div class="col-lg-3 milestone_col">
 					<div class="milestone text-center">
-						<div class="milestone_icon"><img src="images/camera.svg" alt=""></div>
-						<div class="milestone_counter" data-end-value="11923">0</div>
-						<div class="milestone_text">Teachers</div>
+						<div class="milestone_icon"><img src="{% static 'images/js.png'%}" alt=""></div>
+						<div class="milestone_counter" data-end-value="30">0</div>
+						<div class="milestone_text">Js html css/Month Experience</div>
 					</div>
 				</div>
 
 				<!-- Milestone -->
 				<div class="col-lg-3 milestone_col">
 					<div class="milestone text-center">
-						<div class="milestone_icon"><img src="images/boat.svg" alt=""></div>
-						<div class="milestone_counter" data-end-value="15">0</div>
-						<div class="milestone_text">Countries</div>
+						<div class="milestone_icon"><img src="{% static 'images/dock.png'%}" alt=""></div>
+						<div class="milestone_counter" data-end-value="8">0</div>
+						<div class="milestone_text">Docker/Month Experience</div>
 					</div>
 				</div>
 
@@ -197,12 +151,12 @@
 	<!-- Why Choose Us -->
 
 	<div class="why">
-		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/why.jpg" data-speed="0.8"></div>
+		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/why.jpg'%}" data-speed="0.8"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col text-center">
-					<div class="section_subtitle">simply amazing places</div>
-					<div class="section_title"><h2>Why choose us?</h2></div>
+					<div class="section_subtitle">MY INTREST</div>
+					<div class="section_title"><h2>What is my hobbies?</h2></div>
 				</div>
 			</div>
 			<div class="row why_row">
@@ -211,15 +165,15 @@
 				<div class="col-lg-4 why_col">
 					<div class="why_item">
 						<div class="why_image">
-							<img src="images/why_1.jpg" alt="">
+							<img src="{% static 'images/why_1.jpg'%}" alt="">
 							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
-								<img src="images/why_1.svg" alt="">
+								<img src="{% static 'images/why_1.svg'%}" alt="">
 							</div>
 						</div>
 						<div class="why_content text-center">
-							<div class="why_title">Fast Services</div>
+							<div class="why_title">Travelling</div>
 							<div class="why_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>
+								<p>Going around the world and taking professional pictures with my Canon 600D.</p>
 							</div>
 						</div>
 					</div>
@@ -229,15 +183,15 @@
 				<div class="col-lg-4 why_col">
 					<div class="why_item">
 						<div class="why_image">
-							<img src="images/why_2.jpg" alt="">
+							<img src="{% static 'images/why_2.jpg'%}" alt="">
 							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
-								<img src="images/why_2.svg" alt="">
+								<img src="{% static 'images/why_2.svg'%}" alt="">
 							</div>
 						</div>
 						<div class="why_content text-center">
-							<div class="why_title">Great Team</div>
+							<div class="why_title">Social events</div>
 							<div class="why_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>
+								<p>Spend time with friends and have a drink some where.</p>
 							</div>
 						</div>
 					</div>
@@ -247,15 +201,15 @@
 				<div class="col-lg-4 why_col">
 					<div class="why_item">
 						<div class="why_image">
-							<img src="images/why_3.jpg" alt="">
+							<img src="{% static 'images/dagcilik.jpg'%}" alt="">
 							<div class="why_icon d-flex flex-column align-items-center justify-content-center">
-								<img src="images/why_3.svg" alt="">
+								<img src="{% static 'images/why_3.svg'%}" alt="">
 							</div>
 						</div>
 						<div class="why_content text-center">
-							<div class="why_title">Best Deals</div>
+							<div class="why_title">Mountaineering</div>
 							<div class="why_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo.</p>
+								<p>Specially Iran has beautiful mountains with amazing people.</p>
 							</div>
 						</div>
 					</div>
@@ -267,74 +221,7 @@
 
 	<!-- Team -->
 
-	<div class="team">
-		<div class="container">
-			<div class="row">
-				<div class="col text-center">
-					<div class="section_subtitle">simply amazing places</div>
-					<div class="section_title"><h2>Meet the Team</h2></div>
-				</div>
-			</div>
-			<div class="row team_row">
-				
-				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="images/team_1.jpg" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">Margaret Smith</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="images/team_2.jpg" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">James Williams</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="images/team_3.jpg" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">Michael James</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Team Item -->
-				<div class="col-xl-3 col-md-6 team_col">
-					<div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
-						<div class="team_image"><img src="images/team_4.jpg" alt=""></div>
-						<div class="team_content">
-							<div class="team_title"><a href="#">Noah Smith</a></div>
-							<div class="team_text">
-								<p>Pellentesque sit amet elementum ccumsan sit amet mattis eget, tristique at leo. Vivamus massa.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-
 	<!-- Footer -->
-
 	<footer class="footer">
 		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{% static 'images/footer_1.jpg' %}" data-speed="0.8"></div>
 		<div class="container">
@@ -364,12 +251,12 @@
 						<!-- Footer Contact Item -->
 						<div class="col-xl-4 footer_contact_col">
 							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="images/sign.svg" alt=""></div>
+								<div class="footer_contact_icon"><img src="{% static 'images/sign.svg'%}" alt=""></div>
 								<div class="footer_contact_title">give us a call</div>
 								<div class="footer_contact_list">
 									<ul>
-										<li>Office Landline: +44 5567 32 664 567</li>
-										<li>Mobile: +44 5567 89 3322 332</li>
+
+										<li>Mobile: +90 538 060 50 40</li>
 									</ul>
 								</div>
 							</div>
@@ -378,11 +265,11 @@
 						<!-- Footer Contact Item -->
 						<div class="col-xl-4 footer_contact_col">
 							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="images/trekking.svg" alt=""></div>
+								<div class="footer_contact_icon"><img src="{% static 'images/trekking.svg'%}" alt=""></div>
 								<div class="footer_contact_title">come & drop by</div>
 								<div class="footer_contact_list">
 									<ul style="max-width:190px">
-										<li>4124 Barnes Street, Sanford, FL 32771</li>
+										<li>Berkan Sems</li>
 									</ul>
 								</div>
 							</div>
@@ -391,12 +278,12 @@
 						<!-- Footer Contact Item -->
 						<div class="col-xl-4 footer_contact_col">
 							<div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="images/around.svg" alt=""></div>
-								<div class="footer_contact_title">send us a message</div>
+								<div class="footer_contact_icon"><img src="{% static 'images/around.svg'%}" alt=""></div>
+								<div class="footer_contact_title">send me a message</div>
 								<div class="footer_contact_list">
 									<ul>
-										<li>youremail@gmail.com</li>
-										<li>Office@yourbusinessname.com</li>
+										<li>berkansems@gmail.com</li>
+
 									</ul>
 								</div>
 							</div>
@@ -407,9 +294,8 @@
 			</div>
 		</div>
 		<div class="col text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#">Berkan SEMS</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </div>
-
 	</footer>
 </div>
 

@@ -34,7 +34,7 @@
 
 									<ul class="d-flex flex-row align-items-start justify-content-start">
 
-										<li class="active"><a href="index.html">Home</a></li>
+										<li class="active"><a href="{% url 'user_page' user.customer.id %}">Home</a></li>
 										<li><a href="{% url 'reservations' customer.id %}">Your Reservations</a></li>
 										<li><a href="#">Pay Now</a></li>
 										<li><a href="{% url 'signout' %}">Sign out  </a><i style="color:white ;margin-left:5px" class="fa fa-sign-out" aria-hidden="true"></i>

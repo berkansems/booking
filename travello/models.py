@@ -7,7 +7,6 @@ from django.db import models
 class Destination(models.Model):
 
     name=models.CharField(max_length=50,null=True)
-    person = models.IntegerField(null=True)
     description=models.CharField(max_length=50,null=True)
     price=models.IntegerField(null=True)
     image=models.ImageField(upload_to='pics',null=True,blank=True)

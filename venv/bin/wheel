@@ -1,4 +1,4 @@
-#!/home/berkan/Desktop/projects/booking/venv/bin/python
+#!/home/berkan/Desktop/github/booking/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

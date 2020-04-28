@@ -20,9 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 's!f%ku$p(!h-_%+ww-o8nsbm91%jk9@!)hs0k*dugm(*s@(#pk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = int(os.environ.get("DEBUG",default=1))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(" ") if os.environ.get('ALLOWED_HOSTS') else ['localhost', '127.0.0.1']
+# Application definition
+
 
 
 # Application definition
@@ -75,10 +77,11 @@ WSGI_APPLICATION = 'website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'book',
-        'USER':'postgres',
-        'PASSWORD':'123',
-        'HOST':'localhost',
+        'NAME': os.environ.get("NAME", 'postgres') ,
+        'USER': os.environ.get("USER",'postgres'),
+        'PASSWORD': os.environ.get("PASSWORD", '123'),
+        'HOST': os.environ.get("HOST",'postgres'),
+        'PORT': os.environ.get("PORT",'5432')
     }
 }
 
@@ -134,3 +137,37 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'lizartinsaat@gmail.com'
 EMAIL_HOST_PASSWORD = '123456+test'
+
+
+LOGGING = {
+    "version": 1,
+    "formatters": {
+        "default": {
+            "format": "%(asctime)s : [%(levelname)-8s] %(processName)s:%(process)d:%(thread)d:%(name)s : %(message)s",
+        }
+    },
+    "handlers": {
+        "file": {
+            "class": "logging.handlers.RotatingFileHandler",
+            "level": "INFO",
+            "formatter": "default",
+            "filename": os.environ.get("LOG_PATH","/opt/myapp.log"),
+            "maxBytes": os.environ.get("LOG_FILE_SIZE", 209715200)  # 200M
+        },
+        "stdout": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "default",
+        }
+    },
+    "loggers": {
+        "logger1": {
+            "level": "INFO",
+            "handlers": ["stdout"],
+        },
+        "logger2": {
+            "level": "INFO",
+            "handlers": ["stdout", "file"],
+        },
+    },
+}

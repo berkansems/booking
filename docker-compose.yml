@@ -1,0 +1,40 @@
+version: "3.3"
+
+services:
+  travello:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: bookatravel
+
+    ports:
+      - 8001:8000
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"
+    links:
+      - postgres:postgres
+    env_file:
+      - ./env/django.env
+    environment:
+      - LOG_PATH=/var/log/booklog/bookapp.log
+    volumes:
+      - /opt/log:/var/log/booklog
+
+  postgres:
+    image: postgres:10.4
+    container_name: bookingpostgres
+    env_file:
+      - ./env/postgresql.env
+    volumes:
+      - /opt/data:/var/lib/postgresql/data/
+
+  rabbitmq:
+    image: "rabbitmq:3-management"
+    hostname: "rabbit"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq"
+    volumes:
+      - ./opt/rabbitmq:/etc/rabbitmq/rabbitmq.config

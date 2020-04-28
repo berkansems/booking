@@ -8,15 +8,15 @@ from django.shortcuts import redirect, render
 from travello.forms import CreateUserForm, OrderForm
 from travello.models import Destination, Customer, Order
 from django.contrib import messages
+import logging
 
+logger=logging.getLogger("logger2")
 
 def index(request):
-
     offers=Destination.objects.all()
     context={'offers':offers}
 
     return render(request,"pages/index.html",context)
-
 
 def signup(request):
     formSet=CreateUserForm()
@@ -32,11 +32,12 @@ def signup(request):
                 name=user.username,
                 email=user.email
             )
+            logger.info("new user signed up with this username =" + str(user.username))
             return redirect('signin')
+        else:
+            logger.error("sign up failed")
     context={'formSet':formSet}
     return render(request,"pages/signup.html",context)
-
-
 
 
 def signin(request):
@@ -46,11 +47,18 @@ def signin(request):
         user=authenticate(request,username=username,password=password)
         if user is not None:
             login(request,user)
+
+            logger.info(str(username) + " signed in successfully")
+
             return redirect('user_page',user.customer.id)
+        else:
+            logger.error("sign in failed")
     return render(request,"pages/signin.html")
 
 def signout(request):
     logout(request)
+
+    logger.info(" user signed out successfully")
     return redirect('')
 
 
